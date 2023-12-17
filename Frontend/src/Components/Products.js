@@ -91,13 +91,13 @@ function Products() {
         <div className="col-md-9">
           <div className="row mt-3">
             {products.map((product) => (
-              <div key={product.productId} className="col-md-4">
+              <div key={product.productId} className="col-md-3">
                 <div className="card mb-4 shadow">
                   <img
                     src={product.productImageURL}
                     className="card-img-top"
                     alt={product.category}
-                    style={{ maxHeight: "250px", objectFit: "cover" }}
+                    style={{ maxHeight: "200px", objectFit: "cover" }}
                   />
                   <div className="card-body">
                     <h5 className="card-title">

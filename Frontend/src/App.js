@@ -24,7 +24,7 @@ function App() {
 
 
        <BadgeState>
-
+        
       <CartState>
       <Routes>
         
