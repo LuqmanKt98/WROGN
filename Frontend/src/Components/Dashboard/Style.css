@@ -1,0 +1,37 @@
+/* Style.css */
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.navbar{
+    background-color: black;
+    color:white;
+}
+
+span{
+    color: white;
+
+}
+
+i{
+    color: lightskyblue;
+}
+
+.nav-link {
+    display: block;
+    margin-bottom: 5px; /* Adjust the margin as needed */
+    transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+  }
+  
+  .nav-link:hover {
+    background-color: #343a40; /* Change this to the desired background color on hover */
+    background-size: 50px 50px;
+  }
+  
+  /* Additional styling for the active link if needed */
+  .nav-link.active {
+    background-color: #343a40; /* Change this to the desired background color for the active link */
+    color: #ffffff; /* Change this to the desired text color for the active link */
+  }

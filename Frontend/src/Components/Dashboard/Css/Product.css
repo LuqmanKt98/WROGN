@@ -1,0 +1,129 @@
+/* Styling for cards */
+.card {
+    padding: 10px; /* Padding around the card content */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    transition: .3s all ease-in-out; /* Smooth transition effect */
+    height: auto; /* Allow the card to adjust its height based on content */
+    max-height: 400px; /* Set a maximum height to prevent excessive stretching */
+    overflow: hidden; /* Hide content overflow */
+    background-color: black; /* Background color for the card */
+    color: white; /* Text color for the card */
+    margin-bottom: 20px; /* Margin between cards to create space */
+}
+
+/* Styling for card hover effect */
+.card:hover {
+    box-shadow: 2px 2px 15px #4883c7e5; /* Box shadow on hover for a subtle effect */
+    transform: scale(1.02); /* Slight scale-up on hover */
+}
+
+/* Styling for the product name */
+.card .product-name {
+    font-weight: 600; /* Bold font for product name */
+    font-size: 0.8rem; /* Font size for product name */
+    margin-bottom: 4px; /* Margin below product name */
+    color: white; /* Text color for the product name */
+}
+
+/* Styling for the card image */
+.card-img img {
+    width: 100%; /* Make the image fill the width of the container */
+    max-height: 350px; /* Set a maximum height for the image */
+    object-fit: contain; /* Maintain aspect ratio while containing within the box */
+    display: block; /* Make the image a block element */
+    margin-bottom: 8px; /* Margin below the image */
+}
+
+/* Styling for text-muted elements */
+.card .text-muted {
+    font-size: 0.7rem; /* Font size for muted text */
+    margin-bottom: 2px; /* Margin below muted text */
+    color: white; /* Text color for muted text */
+}
+
+/* Styling for the buttons in the button group */
+.card-body .btn-group .btn {
+    padding: 0; /* Remove default button padding */
+    width: 18px; /* Button width */
+    height: 18px; /* Button height */
+    margin-right: 4px; /* Margin between buttons */
+    border-radius: 50%; /* Make buttons circular */
+    position: relative; /* Position relative for absolute positioning of pseudo-element */
+}
+
+/* Styling for radio buttons */
+.card-body input[type="radio"] {
+    visibility: hidden; /* Hide radio buttons */
+}
+
+/* Styling for the dot in active radio buttons */
+.card-body .btn:not(:disabled):not(.disabled).active::after,
+.card-body .btn:not(:disabled):not(.disabled):active::after {
+    content: ""; /* Empty content for pseudo-element */
+    width: 10px; /* Width of the dot */
+    height: 10px; /* Height of the dot */
+    border-radius: 50%; /* Make the dot circular */
+    top: 4px; /* Position from the top */
+    left: 4.2px; /* Position from the left */
+    background-color: #fff; /* Dot color */
+    position: absolute; /* Absolute positioning for precise placement */
+    transition: ease-in all .4s; /* Smooth transition effect */
+}
+
+/* Styling for the checkbox input in avail-size */
+#avail-size input[type="checkbox"] {
+    visibility: hidden;
+}
+
+/* Styling for checked checkboxes in avail-size */
+#avail-size input[type='checkbox']:checked {
+    background-color: #16c79a;
+    border: none;
+}
+
+/* Styling for success buttons in avail-size */
+#avail-size .btn.btn-success {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    width: 18px; /* Adjusted button size */
+    height: 18px; /* Adjusted button size */
+    font-size: 0.6rem; /* Adjusted font size */
+    border-radius: 0;
+    padding: 0;
+}
+
+/* Hover styling for success buttons in avail-size */
+#avail-size .btn.btn-success:hover {
+    background-color: #aff1e1;
+    color: #444;
+}
+
+/* Active styling for success buttons in avail-size */
+#avail-size .btn-success:not(:disabled):not(.disabled).active,
+#avail-size .btn-success:not(:disabled):not(.disabled):active {
+    background-color: #16c79a;
+    color: #fff;
+}
+
+/* Styling for labels in avail-size */
+#avail-size label {
+    margin-right: 2px; /* Reduce space between labels */
+}
+
+/* Styling for the price and discounted price */
+.card .price {
+    font-size: 0.8rem; /* Adjusted font size */
+    margin-top: 4px; /* Maintain space between price and colors */
+}
+
+.card .del {
+    font-size: 0.8rem; /* Adjusted font size */
+    color: red;
+}
+
+/* Additional styling for category */
+.card .category {
+    font-size: 0.7rem; /* Adjusted font size */
+    margin-top: 2px; /* Maintain space between category and price */
+}
