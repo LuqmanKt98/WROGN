@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const url = "http://localhost:5000/adminPanel";
+const url = "http://localhost:5000";
 
 export const AddProduct = async (productData) => {
     console.log("Api Called: Adding Product, Data =", productData);

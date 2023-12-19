@@ -6,7 +6,7 @@ function Dashboard() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-3 d-flex">
-          <div className="card border-light mb-3 shadow flex-fill bg-black text-white">
+          <div className="card border-primary mb-3 shadow flex-fill bg-black text-white">
             <div className="card-body d-flex align-items-center justify-content-between">
               <div>
                 <h5 className="card-title">230</h5>
@@ -19,7 +19,7 @@ function Dashboard() {
         </div>
 
         <div className="col-md-3 d-flex">
-          <div className="card border-light mb-3 shadow flex-fill bg-black text-white">
+          <div className="card border-primary mb-3 shadow flex-fill bg-black text-white">
             <div className="card-body d-flex align-items-center justify-content-between">
               <div>
                 <h5 className="card-title">2450</h5>
@@ -31,8 +31,8 @@ function Dashboard() {
         </div>
 
         <div className="col-md-3 d-flex">
-          <div className="card border-light mb-3 shadow flex-fill bg-black text-white">
-            <div className="card-body d-flex align-items-center justify-content-between">
+          <div className="card border-primary mb-3 shadow flex-fill bg-black text-white">
+            <div className="card-body d-flex align-items-center justify-content-between ">
               <div>
                 <h5 className="card-title">20%</h5>
                 <p>Increase</p>
@@ -43,7 +43,7 @@ function Dashboard() {
         </div>
 
         <div className="col-md-3 d-flex">
-          <div className="card border-light mb-3 shadow flex-fill bg-black text-white">
+          <div className="card border-primary mb-3 shadow flex-fill bg-black text-white">
             <div className="card-body d-flex align-items-center justify-content-between">
               <div>
                 <h5 className="card-title">2250</h5>
@@ -57,7 +57,7 @@ function Dashboard() {
 
         <div className="row mt-4">
           <div className="col-md-12">
-            <div className="card border-light mb-3 shadow bg-black text-white">
+            <div className="card border-primary mb-3 shadow bg-black text-white">
               <div className="card-body">
                 <table className="table caption-top mt-2" style={{ backgroundColor: "black", color: "white" }}>
                   <caption className='text-dark fs-4'><strong className='text-white'>Recent Orders</strong></caption>

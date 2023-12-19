@@ -21,4 +21,4 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.listen(5000);
 
 
-app.use("/adminPanel",wrognRoutes);
+app.use("/",wrognRoutes);
