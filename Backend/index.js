@@ -13,10 +13,11 @@ mongoose.connect(url).then(()=>{
 });
 
 app.use(cors({
-    origin: ["https://wrogn-frontend.vercel.app/"],
-    methods: ["POST", "GET" , "PUT" , "DELETE"],
+    origin: ["https://wrogn-frontend.vercel.app"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }));
+
 
 
 app.use(bodyParser.json({extended : true}));
