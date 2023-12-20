@@ -13,7 +13,7 @@ mongoose.connect(url).then(()=>{
 });
 
 app.use(cors({
-    origin: ["https://deploy-mern-1w.vercel.app"],
+    origin: ["https://wrogn-frontend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true
 }));
