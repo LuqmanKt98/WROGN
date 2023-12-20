@@ -12,7 +12,13 @@ mongoose.connect(url).then(()=>{
     console.log("Connection with MongoDB is Established");
 });
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://deploy-mern-1w.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+}));
+
+
 app.use(bodyParser.json({extended : true}));
 app.use(bodyParser.urlencoded({extended:true}));
 
