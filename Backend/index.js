@@ -14,7 +14,7 @@ mongoose.connect(url).then(()=>{
 
 app.use(cors({
     origin: ["https://wrogn-frontend.vercel.app/"],
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET" , "PUT" , "DELETE"],
     credentials: true
 }));
 
