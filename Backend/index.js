@@ -32,5 +32,5 @@ app.listen(5000);
 
 app.use("/User",UserRoutes);
 app.post("/google/Signup" , addGoogleUserInDb);
-// app.use("/",wrognRoutes);
+app.use("/",wrognRoutes);
 
