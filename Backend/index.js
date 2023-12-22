@@ -3,6 +3,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import wrognRoutes from "../Backend/routes/WrognRoutes.js"
+import UserRoutes from "../Backend/routes/UserRoutes.js"
+import { addGoogleUserInDb } from "./controllers/addGoogleUsers.js";
 
 const app = express();
 
@@ -14,6 +16,7 @@ mongoose.connect(url).then(()=>{
 
 app.use(cors({
     origin: ["https://wrogn-frontend.vercel.app"],
+    // origin: ["http://localhost:3000"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }));
@@ -27,5 +30,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.listen(5000);
 
+app.use("/User",UserRoutes);
+app.post("/google/Signup" , addGoogleUserInDb);
+// app.use("/",wrognRoutes);
 
-app.use("/",wrognRoutes);

@@ -41,7 +41,7 @@ const headerStyles = {
 };
 
 function Header() {
-  const { badgeCount, setBadgeCount } = useContext(badgeContext);
+  const { badgeCount } = useContext(badgeContext);
 
   return (
     <div
@@ -147,12 +147,12 @@ function Header() {
                   className="dropdown-menu dropdown-menu-end"
                   aria-labelledby="myAccountDropdown"
                 >
-                  <Link to="/login">
+                  <Link to="/User/Login">
                     <button className="dropdown-item" type="button">
                       Login
                     </button>
                   </Link>
-                  <Link to="/register">
+                  <Link to="/User/Register">
                     <button className="dropdown-item" type="button">
                       Register
                     </button>

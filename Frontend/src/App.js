@@ -35,9 +35,9 @@ function App() {
        <Route path="/jeans" element={<Prodcuts/>} ></Route>
        <Route path="/t-shirt" element={<Prodcuts/>} ></Route>
        <Route path="/AdminPanel" element={<AdminPanel/>} ></Route>
-       <Route path="/register" element={<RegistrationForm/>} ></Route>
+       <Route path="/User/Register" element={<RegistrationForm/>} ></Route>
        <Route path="/cart" element={<Cart/>} ></Route>
-       <Route path="/login" element={<SignIn/>} ></Route>
+       <Route path="/User/Login" element={<SignIn/>} ></Route>
        <Route path="/about-us" element={<AboutUs/>} ></Route>
        <Route path="/faqs" element={<Faqs/>} ></Route>
        <Route path="/contact-us" element={<ContactUs/>} ></Route>

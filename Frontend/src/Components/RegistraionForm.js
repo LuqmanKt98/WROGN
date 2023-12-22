@@ -1,76 +1,129 @@
-// import React from "react";
-// import Header from "./Header";
-// import Footer from "./Footer";
+// RegistrationForm.js
+import React, { useState } from "react";
+import { addUser } from "../services/api";
+import Header from "./Header";
+import Footer from "./Footer";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
+import { addGoogleUser } from "../services/api";
 
-// function RegistrationForm() {
+function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
 
+  
 
-//   return (
-//     <>
-//     <Header/>
-//       <section style={{ backgroundColor: "#eee", paddingBottom:"30px",paddingTop:"10px" }}>
-//         <div className="container h-100">
-//           <div className="row d-flex justify-content-center align-items-center h-100">
-//             <div className="col-lg-12 col-xl-11">
-//               <div className="card text-black" style={{ borderRadius: "25px" }}>
-//                 <div className="card-body p-md-5">
-//                   <div className="row justify-content-center">
-//                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-//                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-//                       <form className="mx-1 mx-md-4">
-//                         <div className="d-flex flex-row align-items-center mb-4">
-//                           <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-//                           <div className="form-outline flex-fill mb-0">
-//                             <input type="text" id="form3Example1c" className="form-control" />
-//                             <label className="form-label" htmlFor="form3Example1c">Your Name</label>
-//                           </div>
-//                         </div>
-//                         <div className="d-flex flex-row align-items-center mb-4">
-//                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
-//                           <div className="form-outline flex-fill mb-0">
-//                             <input type="email" id="form3Example3c" className="form-control" />
-//                             <label className="form-label" htmlFor="form3Example3c">Your Email</label>
-//                           </div>
-//                         </div>
-//                         <div className="d-flex flex-row align-items-center mb-4">
-//                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
-//                           <div className="form-outline flex-fill mb-0">
-//                             <input type="password" id="form3Example4c" className="form-control" />
-//                             <label className="form-label" htmlFor="form3Example4c">Password</label>
-//                           </div>
-//                         </div>
-//                         <div className="d-flex flex-row align-items-center mb-4">
-//                           <i className="fas fa-key fa-lg me-3 fa-fw"></i>
-//                           <div className="form-outline flex-fill mb-0">
-//                             <input type="password" id="form3Example4cd" className="form-control" />
-//                             <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
-//                           </div>
-//                         </div>
-//                         <div className="form-check d-flex justify-content-center mb-5">
-//                           <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-//                           <label className="form-check-label" htmlFor="form2Example3">
-//                             I agree to all statements in <a href="#!">Terms of service</a>
-//                           </label>
-//                         </div>
-//                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-//                           <button type="button" className="btn btn-primary btn-lg" style={{backgroundColor:"indigo"}}>Register</button>
-//                         </div>
-//                       </form>
-//                     </div>
-//                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-//                       <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-//                         className="img-fluid" alt="Sample image" />
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//       <Footer/>
-//     </>
-//   );
-// }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
 
-// export default RegistrationForm;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("User Data : ", formData);
+    try {
+      // Call the API function for user registration
+      const response = await addUser(formData);
+      if (response) {
+        alert("user registered successfully");
+      }
+    } catch (error) {
+      console.error("Error registering user:", error);
+      alert("Registration failed");
+    }
+
+    console.log("Form submitted:", formData);
+    // Reset the form after submission
+    setFormData({
+      fullName: "",
+      email: "",
+      password: "",
+    });
+  };
+
+  return (
+    <>
+      <Header />
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-9 col-md-7 col-lg-5 mx-auto my-3">
+            <div className="card border-0 shadow rounded-3 my-5">
+              <div className="card-body p-4 p-sm-5">
+                <h5 className="card-title text-center mb-5 fw-dark fs-5">
+                  Sign Up
+                </h5>
+                <form onSubmit={handleSubmit}>
+                  <div className="form-floating mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="fullName">Full Name</label>
+                  </div>
+                  <div className="form-floating mb-3">
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="email">Email address</label>
+                  </div>
+                  <div className="form-floating mb-3">
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="password">Password</label>
+                  </div>
+                  <div className="d-grid">
+                    <button
+                      className="btn btn-login text-uppercase fw-bold"
+                      type="submit"
+                      style={{ backgroundColor: "indigo", color: "white" }}
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                  <hr className="my-4" />
+                  <div className="d-grid mb-2">
+                    {/* <GoogleLogin
+                      onSuccess={(credentialResponse) => {
+                        const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+                        console.log(credentialResponseDecoded);
+                      }}
+                      onError={() => {
+                        console.log("Login Failed");
+                      }}
+                    /> */}
+                  </div>
+                  <div className="d-grid">
+                    <button
+                      className="btn text-uppercase fw-bold"
+                      type="button"
+                      style={{ backgroundColor: "#1877f2", color: "white" }}
+                    >
+                      Sign Up with Facebook
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+export default RegistrationForm;

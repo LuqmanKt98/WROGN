@@ -1,6 +1,9 @@
 // Importing the ProductsModel from the specified path
 import ProductsModel from "../models/ProductsModel.js"; // Adjust the path as needed
 
+
+
+
 // Controller function to handle the addition of new products
 export const postProducts = async (req, res) => {
   console.log("post api reached");
@@ -114,3 +117,5 @@ export const updateProduct = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+

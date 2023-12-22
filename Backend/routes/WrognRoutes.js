@@ -1,5 +1,5 @@
 import express from "express";
-import { postProducts, getProducts, deleteProducts, fetchProduct , updateProduct} from "../controllers/WrognControllers.js";
+import {postProducts, getProducts, deleteProducts, fetchProduct , updateProduct} from "../controllers/WrognControllers.js";
 
 const router = express.Router();
 
